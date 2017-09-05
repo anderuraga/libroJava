@@ -8,7 +8,9 @@ public class HelloWorld {
 		
 		System.out.println("Hello World");
 		
-		String [] alumnos = { "Arkaitz",
+		String [] alumnos = { 
+				                "Ander",   
+				                "Arkaitz",
 				                "Erlantz",
 				                "Fran",
 				                "Cristian",
