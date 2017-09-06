@@ -10,8 +10,10 @@ public class TocaLeer {
 				            "Josu",
 				            "Alberto",
 				            "Jon",
+				            "Arantza",
 				            "Naiara",
 				            "Lander",
+				            "Yeray",
 				            "German"
 				          };
 	
@@ -26,7 +28,7 @@ public class TocaLeer {
 	
 	/**
 	 * genera numero aleatorio entre 0 y <code>max</code>
-	 * @param max int numero maximo que puede generar la función
+	 * @param max int numero maximo que puede generar la funciï¿½n
 	 * @return int aleatorio
 	 */
 	public static int generarNumeroAleatorio( int max ){
