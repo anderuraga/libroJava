@@ -1,28 +1,52 @@
 
 public class TocaLeer {
 
+
+	Participante [] listaParticipantes = new Participante[alumnos.length];
 	static String [] alumnos = { "Arkaitz",
-				            "Erlantz",
-				            "Fran",
-				            "Cristian",
-				            "Leire" ,
-				            "Mikel",
-				            "Josu",
-				            "Alberto",
-				            "Jon",
-				            "Arantza",
-				            "Naiara",
-				            "Lander",
-				            "Yeray",
-				            "German"
-				          };
-	
+            "Erlantz1",
+            "Fran",
+            "Cristian",
+            "Erlantz2",
+            "Leire" ,
+            "Mikel",
+            "Josu",
+            "Alberto",
+            "Jon",
+            "Arantza",
+            "Naiara",
+            "Lander",
+            "Yeray",
+            "German"
+          };
+
+	static String [] Usugit = { "arkaitzgl",
+            "erliglesias",
+            "FranPerez92",
+            "CristianVar",
+            "Erlantzcabrejas",
+            "LeireBustin" ,
+            "zoroa84",
+            "Katakume",
+            "amsoria91",
+            "alarconsolis",
+            "",
+            "naiaramateos",
+            "LanderAB",
+            "LordBlacKhiin",
+            ""
+          };
 	
 	public static void main(String[] args) {
 	
+		Participante [] listaParticipantes = new Participante[alumnos.length];
+		for (int i = 0; i < alumnos.length; i++) {
+			listaParticipantes[i] = new Participante(alumnos[i], Usugit[i]);
+		}
+		
 		int numAleatorio = generarNumeroAleatorio(alumnos.length );					
 		
-		System.out.println("El afortunad@ es:" + alumnos[numAleatorio] );
+		System.out.println("El afortunad@ es:" + listaParticipantes[numAleatorio].getNombre() );
 		
 	}
 	
