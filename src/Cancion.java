@@ -36,7 +36,7 @@ public class Cancion {
 	public void setDuracion(String duracion) {
 		this.duracion = duracion;
 	}
-
+	
 	public String toString() {
 		return "Cancion [nombre=" + nombre + ", artista=" + artista + ", duracion=" + duracion + "]";
 	}

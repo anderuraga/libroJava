@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MenuCanciones {
 
+	static Scanner sc;
 	static ArrayList<Cancion> canciones;
 	static final int OP_LISTAR = 1;
 	static final int OP_ELIMINAR = 2;
@@ -13,49 +15,122 @@ public class MenuCanciones {
 	
 	public static void main(String[] args) {
 	
-		inicializarCanciones();
-		
+		inicializarCanciones();		
 		mostrarMenu();
 		
-		pedirOpcion();
+		do {
+						
+			pedirOpcion();			
+			switch (opcionSeleccionada) {
+			case OP_LISTAR:
+				listar();
+				mostrarMenu();
+				break;
+				
+			case OP_ELIMINAR:
+				eliminar();
+				listar();
+				mostrarMenu();
+				break;
+			
+			case OP_CREAR:
+				crear();
+				mostrarMenu();
+				break;
+				
+			case OP_DETALLE:
+				detalle();
+				mostrarMenu();
+				break;
+	
+			default:
+				break;
+			}
 		
-		switch (opcionSeleccionada) {
-		case OP_LISTAR:
-			listar();
-			mostrarMenu();
-			break;
-			
-		case OP_ELIMINAR:
-			eliminar();
-			listar();
-			mostrarMenu();
-			break;	
-			
-		//TODO hacer el resto de opciones	
+		}while( OP_SALIR != opcionSeleccionada );
+		
+		System.out.println("Agur y gracias por escucharnos");
+	}
 
-		default:
-			break;
+	private static void crear() {
+		sc = new Scanner(System.in);
+		System.out.println("Nombre de la cancion");
+		String nombre = sc.nextLine();
+		
+		System.out.println("Artista de la cancion");
+		String artista = sc.nextLine();
+		
+		System.out.println("Duracion de la cancion");
+		String duracion = sc.nextLine();
+		
+		Cancion c = new Cancion(nombre, artista, duracion);
+		canciones.add(c);
+		
+	}
+
+	private static void detalle() {
+		System.out.println("Dime el numero de cancion para ver su detalle");
+		sc = new Scanner(System.in);
+		int cancionPosicion = sc.nextInt();
+		cancionPosicion--;
+		if ( cancionPosicion >= 0 &&  cancionPosicion <= canciones.size() ) {
+			Cancion c = canciones.get(cancionPosicion);
+			System.out.println( "Nombre: " + c.getNombre());
+			System.out.println( "Artista: " + c.getArtista());
+			System.out.println( "Duracion" + c.getDuracion());
+			System.out.println(" ");
+			
+		}else {
+			System.out.println("Lo siento pero no existe esa cancion");
 		}
-		
-		
-		
 		
 	}
 
 	private static void eliminar() {
-		// TODO Auto-generated method stub
+		
+		System.out.println("Dime el numero de cancion a eliminar");
+		sc = new Scanner(System.in);
+		int cancionPosicionEliminar = sc.nextInt();
+		cancionPosicionEliminar--;
+		
+		//comprobar que exista la cancion
+		if ( cancionPosicionEliminar >= 0 &&  cancionPosicionEliminar <= canciones.size() ) {
+			
+			canciones.remove(cancionPosicionEliminar);
+			
+		}else {
+			System.out.println("Lo siento pero no existe esa cancion");
+		}
 		
 	}
 
 	private static void listar() {
-		// TODO Auto-generated method stub
+		
+		for (int i = 0; i < canciones.size(); i++) {
+			System.out.println( (i+1) + " " + canciones.get(i).getNombre() );
+		}
 		
 	}
 
 	private static void pedirOpcion() {
-		// TODO Scanner y gestion de Excepcion
-		opcionSeleccionada = 1;
+		sc = new Scanner(System.in);
+		boolean opcionCorrecta = false;
+	
+			do {
+				try {					
+					opcionSeleccionada = sc.nextInt();
+					if ( opcionSeleccionada >= 1 && opcionSeleccionada <= 5) {
+						opcionCorrecta = true;
+					}else {
+						System.out.println("Por favor aprende a leer y dime una opcion entre 1 y 5");
+					}	
+				}catch (Exception e) {
+					System.out.println("Por favor selecciona una opcion valida");
+				}		
+				
+			}while( !opcionCorrecta );	
 		
+			
 	}
 
 	private static void mostrarMenu() {
