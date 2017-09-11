@@ -46,7 +46,7 @@ public class TocaLeer {
 		
 		int numAleatorio = generarNumeroAleatorio(alumnos.length );					
 		
-		System.out.println("El afortunad@ es:" + listaParticipantes[numAleatorio].getNombre() );
+		System.out.println("El afortunad@ es:" + listaParticipantes[numAleatorio].getNombre() + " " + listaParticipantes[numAleatorio].getLinkGitHub() );
 		
 	}
 	

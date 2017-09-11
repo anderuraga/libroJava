@@ -6,6 +6,7 @@ public class Participante {
 	private String usuarioGit;
 	private String email;
 	private boolean trabajador;
+	private int edad;
 	
 	
 	//Constructores
@@ -15,6 +16,7 @@ public class Participante {
 		this.email = "";
 		this.usuarioGit = "";
 		this.trabajador = false;
+		this.edad = 0;
 	}
 	
 	
@@ -23,10 +25,25 @@ public class Participante {
 		this.nombre = nombre;
 		this.usuarioGit = usuarioGit;
 		this.email = "";
-		this.trabajador = false;		
+		this.trabajador = false;	
+		this.edad = 0;
 	}
 
 	
+	
+
+	public Participante(String nombre, int edad) {
+		super();
+		
+		this.trabajador = false;	
+		this.usuarioGit = "";
+		this.email = "";
+		
+		this.nombre = nombre;
+		this.edad = edad;
+		
+	}
+
 
 	//getters y setters son necesarios para mantener la encapsulacion
 	public String getNombre() {
@@ -66,19 +83,31 @@ public class Participante {
 		this.trabajador = trabajador;
 	}
 		
-	//otros metodos
+	
 	
 	public String getLinkGitHub() {
 		return "https://github.com/" + this.usuarioGit;
 	}
 
 
-	public String toString() {
-		return "Participante [nombre=" + this.nombre + ", usuarioGit=" + this.usuarioGit + ", email=" + this.email + ", trabajador="
-				+ this.trabajador + "]";
+	public int getEdad() {
+		return edad;
 	}
-	
-	
+
+
+	public void setEdad(int edad) throws ParticipanteException {
+		if ( edad < 0 ) {
+			throw new ParticipanteException( ParticipanteException.EXCEPTION_MENOR_CERO );
+		}
+		this.edad = edad;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Participante [nombre=" + nombre + ", usuarioGit=" + usuarioGit + ", email=" + email + ", trabajador="
+				+ trabajador + ", edad=" + edad + "]";
+	}
 	
 	
 }

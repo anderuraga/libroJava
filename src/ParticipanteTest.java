@@ -23,7 +23,44 @@ public class ParticipanteTest extends TestCase {
 		assertEquals("auraga@ipartek.com", p1.getEmail() );
 		assertFalse(p1.isTrabajador());
 		assertEquals("https://github.com/anderuraga", p1.getLinkGitHub() );
+		
+		try {				
+			Participante matusalem = new Participante("Matu", 235);
+			fail("Deberia haber lanzado Excepcion");
+		}catch (Exception e) {
+			assertEquals(ParticipanteException.EXCEPTION_MAYOR_CIEN ,e.getMessage());
+		}	
+		
+		
 	}
 	
+	public void testExceptionEdad() {
+		
+		Participante p1 = new Participante("ander", "anderuraga");
+		try {
+			p1.setEdad(88);
+		} catch (ParticipanteException e) {
+			fail("No deberia lanzar Excepcion con edad 88");
+		}
+		
+		
+		try {
+			p1.setEdad(-3);
+			fail("Deberia haber lanzado Excepcion");
+		} catch (ParticipanteException e) {
+			assertEquals(ParticipanteException.EXCEPTION_MENOR_CERO ,e.getMessage());
+			
+		}
+		
+		
+		try {
+			p1.setEdad(101);
+			fail("Deberia haber lanzado Excepcion");
+		} catch (ParticipanteException e) {
+			assertEquals(ParticipanteException.EXCEPTION_MAYOR_CIEN ,e.getMessage());
+			
+		}
+				
+	}
 
 }
