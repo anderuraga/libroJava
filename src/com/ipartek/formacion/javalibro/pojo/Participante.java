@@ -1,4 +1,5 @@
 package com.ipartek.formacion.javalibro.pojo;
+
 import com.ipartek.formacion.javalibro.excepciones.ParticipanteException;
 
 public class Participante {
@@ -13,7 +14,7 @@ public class Participante {
 	
 	//Constructores
 	public Participante() {
-		super();
+		super(); 
 		this.nombre = "";
 		this.email = "";
 		this.usuarioGit = "";
@@ -99,6 +100,7 @@ public class Participante {
 		return "Participante [nombre=" + nombre + ", usuarioGit=" + usuarioGit + ", email=" + email + ", trabajador="
 				+ trabajador + ", edad=" + edad + "]";
 	}
+	
 	
 	
 }
