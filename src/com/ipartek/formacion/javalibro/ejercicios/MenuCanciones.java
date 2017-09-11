@@ -1,5 +1,8 @@
+package com.ipartek.formacion.javalibro.ejercicios;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import com.ipartek.formacion.javalibro.pojo.Cancion;
 
 public class MenuCanciones {
 

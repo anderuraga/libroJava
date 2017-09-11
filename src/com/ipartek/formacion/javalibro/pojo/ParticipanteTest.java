@@ -1,3 +1,6 @@
+package com.ipartek.formacion.javalibro.pojo;
+import com.ipartek.formacion.javalibro.excepciones.ParticipanteException;
+
 import junit.framework.TestCase;
 
 public class ParticipanteTest extends TestCase {

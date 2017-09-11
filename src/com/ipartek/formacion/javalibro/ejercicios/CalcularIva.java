@@ -1,3 +1,4 @@
+package com.ipartek.formacion.javalibro.ejercicios;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

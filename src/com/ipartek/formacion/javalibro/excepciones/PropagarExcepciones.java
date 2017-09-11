@@ -1,3 +1,4 @@
+package com.ipartek.formacion.javalibro.excepciones;
 
 public class PropagarExcepciones {
 

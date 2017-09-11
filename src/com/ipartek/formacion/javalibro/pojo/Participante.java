@@ -1,3 +1,5 @@
+package com.ipartek.formacion.javalibro.pojo;
+import com.ipartek.formacion.javalibro.excepciones.ParticipanteException;
 
 public class Participante {
 

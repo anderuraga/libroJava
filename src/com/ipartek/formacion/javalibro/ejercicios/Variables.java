@@ -1,3 +1,4 @@
+package com.ipartek.formacion.javalibro.ejercicios;
 import java.text.NumberFormat;
 
 /*
@@ -36,11 +37,11 @@ public class Variables {
 
 		System.out.println("Reales:");
 		float sueldoMesGerman = 1200.23f;
-		System.out.println("German cobra " + NumberFormat.getInstance().format(sueldoMesGerman) + " € al mes");
+		System.out.println("German cobra " + NumberFormat.getInstance().format(sueldoMesGerman) + " ï¿½ al mes");
 
 		String sSueldoGerman = String.valueOf(sueldoMesGerman);
 		sSueldoGerman = sSueldoGerman.replace('.', ',');
-		System.out.println("German cobra " + sSueldoGerman + " € al mes");
+		System.out.println("German cobra " + sSueldoGerman + " ï¿½ al mes");
 
 		// TODO declarar una varaible primtiva de cada tipo y usar su Wrapper
 
