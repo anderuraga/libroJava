@@ -11,8 +11,31 @@ public class UtilidadesColeciones {
 	 */
 	static int[] ordenarArray( int[] aDesordenado, boolean orden ) {
 		
-		int[] resul = aDesordenado;
+		int[] resul = aDesordenado.clone();
+		int aux = 0;
+		if (orden) { //mayor a menor
 		
+			for (int i = 0; i < resul.length; i++) {
+				for (int j = 0; j < resul.length-1; j++) {
+					if( resul[j] < resul[j+1]){
+						aux = resul[j+1];
+						resul[j+1] = resul[j];
+						resul[j] = aux;						
+					}
+				}
+			}
+			
+		}else { // menor a mayor 
+			for (int i = 0; i < resul.length; i++) {
+				for (int j = 0; j < resul.length-1; j++) {
+					if( resul[j] > resul[j+1]){
+						aux = resul[j+1];
+						resul[j+1] = resul[j];
+						resul[j] = aux;						
+					}
+				}
+			}
+		}			
 		return resul;
 	}
 	
