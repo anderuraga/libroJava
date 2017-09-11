@@ -17,31 +17,18 @@ public class Participante {
 		this.usuarioGit = "";
 		this.trabajador = false;
 		this.edad = 0;
-	}
+	}	
 	
-	
-	public Participante(String nombre, String usuarioGit) {
-		super();
+	public Participante(String nombre, String usuarioGit) {				
+		this();		
 		this.nombre = nombre;
-		this.usuarioGit = usuarioGit;
-		this.email = "";
-		this.trabajador = false;	
-		this.edad = 0;
-	}
+		this.usuarioGit = usuarioGit;		
+	}	
 
-	
-	
-
-	public Participante(String nombre, int edad) {
-		super();
-		
-		this.trabajador = false;	
-		this.usuarioGit = "";
-		this.email = "";
-		
-		this.nombre = nombre;
-		this.edad = edad;
-		
+	public Participante(String nombre, int edad) throws ParticipanteException {
+		this();
+		this.nombre = nombre;		
+		this.setEdad(edad);			
 	}
 
 
@@ -98,6 +85,8 @@ public class Participante {
 	public void setEdad(int edad) throws ParticipanteException {
 		if ( edad < 0 ) {
 			throw new ParticipanteException( ParticipanteException.EXCEPTION_MENOR_CERO );
+		}else if ( edad > 100 ) {
+			throw new ParticipanteException( ParticipanteException.EXCEPTION_MAYOR_CIEN );
 		}
 		this.edad = edad;
 	}
