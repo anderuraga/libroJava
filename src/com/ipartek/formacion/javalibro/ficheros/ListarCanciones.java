@@ -23,10 +23,8 @@ public class ListarCanciones {
 		File[] ficheros = directorio.listFiles();
 		for (int x = 0; x < ficheros.length; x++) {
 			System.out.println(separador + ficheros[x].getName());
-			if (ficheros[x].isDirectory()) {
-				String nuevo_separador;
-				nuevo_separador = separador + "----";
-				listarDirectorio(ficheros[x], nuevo_separador);
+			if (ficheros[x].isDirectory()) {				
+				listarDirectorio(ficheros[x], separador + separador );
 			}
 		}
 	}
