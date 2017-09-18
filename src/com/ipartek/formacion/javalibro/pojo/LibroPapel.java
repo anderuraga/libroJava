@@ -5,6 +5,8 @@ public class LibroPapel extends Libro {
 	
 	private boolean tapaBlanda;
 	
+	public static final float COSTE_TAPA_DURA = 1.5f;
+	
 	public LibroPapel(String titulo) {
 		super(titulo);
 		this.tapaBlanda = true;
@@ -23,7 +25,10 @@ public class LibroPapel extends Libro {
 		return super.toString() + " LibroPapel [tapaBlanda=" + tapaBlanda + "]";
 	}
 
-	
+	@Override
+	public float getPrecio() {		
+		return (this.isTapaBlanda()) ? super.getPrecio() : super.getPrecio() + COSTE_TAPA_DURA;
+	}
 	
 	
 

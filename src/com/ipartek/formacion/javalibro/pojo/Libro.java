@@ -1,9 +1,11 @@
 package com.ipartek.formacion.javalibro.pojo;
 
 import com.ipartek.formacion.javalibro.pojo.interfaces.Imprimible;
+import com.ipartek.formacion.javalibro.pojo.interfaces.Vendible;
 
-public class Libro implements Imprimible {
+public class Libro implements Imprimible, Vendible {
 
+	public static final float PRECIO_PAGINA = 0.2f;
 	
 	private String titulo;
 	private String autor;
@@ -36,8 +38,8 @@ public class Libro implements Imprimible {
 		return paginas;
 	}
 
-	public void setPaginas(int paginas) {
-		this.paginas = paginas;
+	public void setPaginas(int paginas) {		
+		this.paginas = ( paginas > 0 ) ? paginas : 0;
 	}
 
 	@Override
@@ -49,6 +51,11 @@ public class Libro implements Imprimible {
 	
 	/*packaged*/ void imprimir(){
 		System.out.println("Imprimiendo.........");
+	}
+
+	@Override
+	public float getPrecio() {		
+		return this.paginas * PRECIO_PAGINA;
 	}
 	
 	
