@@ -5,6 +5,21 @@ import junit.framework.TestCase;
 
 public class ParticipanteTest extends TestCase {
 	
+	
+	public void testEquals() {
+		
+		Participante p1 = new Participante();
+		Participante p2 = new Participante();
+		
+		p1.setNombre("Manolo");
+		p2.setNombre("Manolo");
+		
+		assertEquals("No son iguales",p1, p2);
+		
+		
+	}
+	
+	
 	public void testConstructorVacio(){
 		
 		Participante p = new Participante();

@@ -1,8 +1,11 @@
 package com.ipartek.formacion.javalibro.pojo;
 
 import com.ipartek.formacion.javalibro.excepciones.ParticipanteException;
+import com.ipartek.formacion.javalibro.pojo.interfaces.Imprimible;
 
-public class Participante {
+public class Participante implements Imprimible {
+
+
 
 	//Atributos privados para no ser accesibles desde fuera de la Clase
 	private String nombre;
@@ -101,6 +104,48 @@ public class Participante {
 				+ trabajador + ", edad=" + edad + "]";
 	}
 	
-	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + edad;
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		result = prime * result + (trabajador ? 1231 : 1237);
+		result = prime * result + ((usuarioGit == null) ? 0 : usuarioGit.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Participante other = (Participante) obj;
+		if (edad != other.edad)
+			return false;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (nombre == null) {
+			if (other.nombre != null)
+				return false;
+		} else if (!nombre.equals(other.nombre))
+			return false;
+		if (trabajador != other.trabajador)
+			return false;
+		if (usuarioGit == null) {
+			if (other.usuarioGit != null)
+				return false;
+		} else if (!usuarioGit.equals(other.usuarioGit))
+			return false;
+		return true;
+	}
 	
 }
