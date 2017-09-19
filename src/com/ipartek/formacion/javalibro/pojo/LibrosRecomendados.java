@@ -9,11 +9,16 @@ public class LibrosRecomendados {
 		l.setAutor("Gabriel Garcia");
 		l.setPaginas(307);
 		
+		l.metodoProtegido();
+		
 		LibroElectronico le = new LibroElectronico("Años salvajes");
 		le.setAutor("William Finnegan");
 		le.setTamanyo(23);
 		le.setPaginas(523);
 		
+		le.metodoProtegido();
+		le.imprimir();
+						
 
 		LibroPapel lp = new LibroPapel("PAPILLÓN");
 		lp.setAutor("CHARRIERE, HENRI");
@@ -25,8 +30,6 @@ public class LibrosRecomendados {
 		System.out.println(lp);
 		
 		
-		
-		le.imprimir();
 		
 	}
 
