@@ -17,5 +17,19 @@ public class ValidacionesTest extends TestCase {
 		assertTrue(Validaciones.email("auraga@ipartek.com"));
 
 	}
+	
+	public void testDNI() {
+		
+		assertFalse(Validaciones.dni(null));
+		assertFalse(Validaciones.dni(""));
+		assertFalse(Validaciones.dni("2eee"));
+		assertFalse(Validaciones.dni("1111111"));
+		assertFalse(Validaciones.dni("1111111Y"));
+		
+		assertTrue(Validaciones.dni("1111111H"));
+		
+	}
+	
+	
 
 }

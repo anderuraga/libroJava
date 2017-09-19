@@ -21,5 +21,11 @@ public class Validaciones {
 		}
 		return resul;
 	}
+	
+	
+	
+	static boolean dni(String dni) {
+		return false;		
+	}
 
 }
