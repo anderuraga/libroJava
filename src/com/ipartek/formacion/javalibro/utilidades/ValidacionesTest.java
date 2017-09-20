@@ -23,10 +23,13 @@ public class ValidacionesTest extends TestCase {
 		assertFalse(Validaciones.dni(null));
 		assertFalse(Validaciones.dni(""));
 		assertFalse(Validaciones.dni("2eee"));
-		assertFalse(Validaciones.dni("1111111"));
+		assertFalse(Validaciones.dni("11111111"));
 		assertFalse(Validaciones.dni("1111111Y"));
 		
-		assertTrue(Validaciones.dni("1111111H"));
+		assertFalse("Sin guiones",Validaciones.dni("11111111-H"));
+		assertFalse("Sin espacios en blaco",Validaciones.dni("11111111 H"));
+		
+		assertTrue(Validaciones.dni("11111111H"));
 		
 	}
 	

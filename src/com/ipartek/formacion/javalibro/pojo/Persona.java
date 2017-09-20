@@ -1,6 +1,12 @@
 package com.ipartek.formacion.javalibro.pojo;
 
+import com.ipartek.formacion.javalibro.excepciones.PersonaException;
+import com.ipartek.formacion.javalibro.utilidades.Validaciones;
+
 public class Persona {
+	
+	public static int MAYOR_EDAD = 18;
+	
 	
 	private String nombre;
 	private String apellido1;
@@ -11,7 +17,7 @@ public class Persona {
 	private int edad;
 	
 	
-	public Persona(String nombre, String apellido1, String apellido2, String email, String dni, String rol, int edad) {
+	public Persona(String nombre, String apellido1, String apellido2, String email, String dni, String rol, int edad) throws PersonaException {
 		super();
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
@@ -19,7 +25,8 @@ public class Persona {
 		this.email = email;
 		this.dni = dni;
 		this.rol = rol;
-		this.edad = edad;
+		//this.edad = edad;
+		setEdad(edad);
 	}
 
 
@@ -58,7 +65,11 @@ public class Persona {
 	}
 
 
-	public void setEmail(String email) {
+	public void setEmail(String email) throws PersonaException {
+		
+		if ( !Validaciones.email(email) ) {
+			throw new PersonaException(PersonaException.MSG_EMAIL_ERROR);
+		}		
 		this.email = email;
 	}
 
@@ -87,8 +98,15 @@ public class Persona {
 		return edad;
 	}
 
-
-	public void setEdad(int edad) {
+    /**
+     * Setea la edad de la Persona
+     * @param edad int años de la Persona
+     * @throws PersonaException edad < 18
+     */
+	public void setEdad(int edad) throws PersonaException {
+		if ( edad < MAYOR_EDAD ) {
+			throw new PersonaException(PersonaException.MSG_EDAD_MENOR);
+		} 
 		this.edad = edad;
 	}
 
