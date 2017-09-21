@@ -1,18 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<!-- final del prologo (opcional) -->
-
-
-<!-- cuerpo -->
-
-<peliculas>
-	<pelicula id="123">
-		<titulo>El cabo del miedo</titulo>
-		<writer>Escrito1</writer>
-		<writer>Escrito2</writer>
-	</pelicula>
-	<pelicula id="124">
-		<titulo>IT Remake</titulo>
-		<writer>Stifen king</writer>		
-	</pelicula>
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="peliculas.xsl"?>
+<peliculas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.example.org peliculas.xsd" xmlns="http://www.example.org">
+  <pelicula tipo="aventura" año="1994">
+    <titulo>El rey Leon</titulo>
+    <guionista>Juan Garcia</guionista>
+    <productor>Jose Fernandez</productor>
+    <director>Jose Fernandez</director>
+    <actor>Mathew Perry</actor>
+    <comentarios>Muy buena pelicula</comentarios>
+  </pelicula>
+   <pelicula tipo="ciencia-ficcion" año="2013">
+    <titulo>Guerra Mundial Z</titulo>
+    <guionista>Steven Spielberg</guionista>
+    <productor>John Spacey</productor>
+    <director>Steven Spielberg</director>
+    <actor>Brad Pitt</actor>
+    <comentarios>Excelente</comentarios>
+  </pelicula>
 </peliculas>
