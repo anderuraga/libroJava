@@ -45,13 +45,20 @@ public class LeerCancionesXML {
 	        	
 	        	element = (Element)nCanciones.item(i);
 	        		        	
-	        	//long id = element.getAttribute("id");
+	        	String sId = element.getAttribute("id");
 	        	String nombre = element.getElementsByTagName("nombre")
 	                    				.item(0)
 	                    				.getTextContent();
+	        	String artista = element.getElementsByTagName("artista")
+				        				.item(0)
+				        				.getTextContent();
+	        	String duracion = element.getElementsByTagName("duracion")
+				        				.item(0)
+				        				.getTextContent();
 	        	
 	        	
-	        	c = new Cancion(nombre, "", "");
+	        	c = new Cancion(nombre, artista, duracion);
+	        	c.setId( Long.parseLong(sId));
 	        	canciones.add(c);
 	        	
 	        }
@@ -68,7 +75,7 @@ public class LeerCancionesXML {
 			System.out.println("Cancion " + c.getId());
 			System.out.println("    Nombre: " + c.getNombre());
 			System.out.println("    Artista: " + c.getArtista());
-			System.out.println("    Duración: " + c.getDuracion());
+			System.out.println("    Duración: " + c.getDuracion() + " min");
 			System.out.println("");			
 		}
 		
