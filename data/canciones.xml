@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<canciones>
+	<cancion id="12">
+		<nombre>Brown Eyeds Girl</nombre>
+		<artista>Van Morrison</artista>
+		<duracion>3:03</duracion>
+	</cancion>
+	<cancion id="134">
+		<nombre>Eye of the Tiger</nombre>
+		<artista>Survivor</artista>
+		<duracion>4:05</duracion>
+	</cancion>
+	<cancion id="56">
+		<nombre>Tuna Punk</nombre>
+		<artista>Manolo KAbezabolo</artista>
+		<duracion>1:12</duracion>
+	</cancion>
+</canciones>
