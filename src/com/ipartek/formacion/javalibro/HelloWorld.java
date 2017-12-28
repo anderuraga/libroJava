@@ -1,6 +1,8 @@
 package com.ipartek.formacion.javalibro;
 
 public class HelloWorld {
+	
+	//cambio tonto para probar Commit asn Push
 
 	final int DIAS_SEMANA = 7;
 	
